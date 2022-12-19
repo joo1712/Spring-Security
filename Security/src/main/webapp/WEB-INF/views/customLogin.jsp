@@ -22,7 +22,7 @@
 		</div>
 		
 		<div>
-			<input type="submit">
+			<input type="submit" value="로그인">
 		</div>
 		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 	</form>

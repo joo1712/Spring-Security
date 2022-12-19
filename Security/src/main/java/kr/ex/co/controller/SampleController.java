@@ -15,18 +15,18 @@ public class SampleController {
 	@RequestMapping("/all")
 	public String doAll(Model model) {
 		logger.info("do all can access everybody");
-		return "all";
+		return "/sample/all";
 	}
 	
 	@RequestMapping("/member")
 	public String doMember(Model model) {
 		logger.info("logined member");
-		return "member";
+		return "/sample/member";
 	}
 	
 	@RequestMapping("/admin")
 	public String doAdmin(Model model) {
 		logger.info("admin only");
-		return "admin";
+		return "/sample/admin";
 	}
 }

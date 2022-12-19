@@ -9,7 +9,9 @@
                                  http://www.springframework.org/schema/security/spring-security.xsd">
                                  
                                  
-        <beans:bean id="customAccessDenied" class="kr.ex.co.security.CustomAccessDeniedHandler"></beans:bean>
+        <beans:bean id="customAccessDenied" class="kr.ex.co.security.CustomAccessDeniedHandler" />
+        <beans:bean id="customLoginSuccess" class="kr.ex.co.security.CustomLoginSuccessHanlder" />
+        
         
         <security:http auto-config="true" use-expressions="true">
         
@@ -18,7 +20,12 @@
         	<security:intercept-url pattern="/sample/admin" access="hasRole('ROLE_ADMIN')"/>
         	
 <!--         	<security:form-login /> -->
-        	<security:form-login login-page="/customLogin"/>
+        	<security:form-login login-page="/customLogin" authentication-success-handler-ref="customLoginSuccess" />
+	
+			<!-- 로그아웃 처리   -->
+        	<security:logout logout-url="/customLogout" invalidate-session="true" logout-success-url="/"/>
+        	
+        	
         	
 <!--         	<security:access-denied-handler error-page="/accessError"/> -->
         	<security:access-denied-handler ref="customAccessDenied"/>
