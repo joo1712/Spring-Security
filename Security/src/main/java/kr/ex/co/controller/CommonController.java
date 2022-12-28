@@ -19,7 +19,7 @@ public class CommonController {
 		model.addAttribute("msg", "Access Denied");
 	}
 	
-	@RequestMapping("/customLogin")
+	@RequestMapping("/customLogin2")
 	public void customLogin(String error, String logout, Model model) {
 		
 		logger.info("error :" + error);
@@ -30,6 +30,7 @@ public class CommonController {
 		
 		if (logout != null)
 			model.addAttribute("logout","Logout !!!");
+		
 	}
 	
 	@RequestMapping("/customLogout")

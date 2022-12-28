@@ -9,7 +9,6 @@
 </head>
 <body>
 	<h1>Custom Login Page</h1>
-	
 	<h2><c:out value="${error}" /></h2>
 	<h2><c:out value="${logout}" /></h2>
 	
